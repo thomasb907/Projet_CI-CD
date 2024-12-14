@@ -1,6 +1,7 @@
 import subprocess
 import pytest
 
+
 def test_program_builds():
     """Vérifie que le programme s'exécute sans erreur."""
     try:

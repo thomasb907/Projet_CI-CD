@@ -1,6 +1,7 @@
 import requests
 import fire
 
+
 def list_vehicule(address="http://localhost:8080/vehicles"):
     try:
         response = requests.get(address)
@@ -9,5 +10,6 @@ def list_vehicule(address="http://localhost:8080/vehicles"):
     except requests.exceptions.RequestException as e:
         return f"Erreur lors de la requête : {e}"
 
+
 if __name__ == '__main__':
-    print(list_vehicule())
+    print(fire.Fire(list_vehicule))
