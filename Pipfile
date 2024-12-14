@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 fire = "*"
-
+requests = "*"
 
 [dev-packages]
 pytest = "*"
