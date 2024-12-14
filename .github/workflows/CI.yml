@@ -2,10 +2,34 @@ name: ci
 on:
   - push
   - pull_request
-jobs:
-  dire_bonjour:
-    runs-on: ubuntu-22.04
+jjobs:
+  test:
+    runs-on: ubuntu-latest
+
     steps:
-      - name: 'python'
-        entrypoint: 'python'
-        args: ['-m', 'build']
+    # Étape 1 : Checkout du code
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Étape 2 : Installer Python
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    # Étape 3 : Installer les dépendances avec pipenv
+    - name: Install dependencies
+      run: |
+        pip install pipenv
+        pipenv install --dev
+
+    # Étape 4 : Exécuter les tests
+    - name: Run tests
+      run: |
+        pipenv run pytest
+
+    # Étape 5 : Exécuter les tests de build et unitaire
+    - name: Run build tests
+      run: |
+        pipenv run pytest tests.py
+
