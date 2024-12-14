@@ -12,4 +12,4 @@ def list_vehicule(address="http://localhost:8080/vehicles"):
 
 
 if __name__ == '__main__':
-    print(fire.Fire(list_vehicule))
+    fire.Fire(list_vehicule)
