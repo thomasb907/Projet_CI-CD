@@ -1,0 +1,11 @@
+name: ci
+on:
+  - push
+  - pull_request
+jobs:
+  dire_bonjour:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: 'python'
+        entrypoint: 'python'
+        args: ['-m', 'build']
