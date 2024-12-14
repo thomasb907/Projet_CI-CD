@@ -23,7 +23,7 @@ jobs:
         pip install pipenv
         pipenv install --dev
 
-    # Étape 4: Exécuter les tests de build et unitaire
+    # Étape 4: Exécuter les tests
     - name: Run build tests
       run: |
         pipenv run pytest tests.py
